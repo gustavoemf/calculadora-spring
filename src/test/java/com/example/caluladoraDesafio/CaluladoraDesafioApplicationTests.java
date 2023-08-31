@@ -24,12 +24,17 @@ class CaluladoraDesafioApplicationTests {
 		);
 		desvio = 0.001;
 	}
-
 	@Test
 	public void testSoma(){
 		double esperado = 630.0; // Soma dos valores
 		double resultado;
 		resultado = Calcular.somar(valores);
+		Assert.assertEquals(esperado, resultado, desvio);
+	}
+	@Test
+	public void testValorMax(){
+		double esperado = 40.0; // Maior valor na lista
+		double resultado = Collections.max(valores);
 		Assert.assertEquals(esperado, resultado, desvio);
 	}
 }
