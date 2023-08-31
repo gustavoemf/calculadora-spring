@@ -43,4 +43,10 @@ class CaluladoraDesafioApplicationTests {
 		double resultado = Collections.min(valores);
 		Assert.assertEquals(esperado, resultado, desvio);
 	}
+	@Test
+	public void testMetodoMedia(){
+		double esperado = 30; // Média dos valores
+		double resultado = Calcular.media(valores);
+		Assert.assertEquals(esperado, resultado, desvio);
+	}
 }
