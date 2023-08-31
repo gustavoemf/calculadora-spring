@@ -37,4 +37,10 @@ class CaluladoraDesafioApplicationTests {
 		double resultado = Collections.max(valores);
 		Assert.assertEquals(esperado, resultado, desvio);
 	}
+	@Test
+	public void testValorMin(){
+		double esperado = 20.0; // Menor valor na lista
+		double resultado = Collections.min(valores);
+		Assert.assertEquals(esperado, resultado, desvio);
+	}
 }
