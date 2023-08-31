@@ -4,6 +4,13 @@ import java.util.Collections;
 import java.util.List;
 
 public class Calcular {
+    public static double somar(List<Double> valores){
+        double total = 0;
+        for (Double valor: valores) {
+            total += valor;
+        }
+        return total;
+    }
     public static double media(List<Double> valores){
         if (valores.isEmpty()) {
             throw new IllegalArgumentException("A lista de valores não pode estar vazia.");

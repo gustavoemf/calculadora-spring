@@ -1,7 +1,7 @@
 package com.example.caluladoraDesafio.controller;
 
-import com.desafio.DesafioSpringBoot.dto.Valor;
-import com.desafio.DesafioSpringBoot.service.ValorService;
+import com.example.caluladoraDesafio.dto.Valor;
+import com.example.caluladoraDesafio.service.ValorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,16 +15,16 @@ import java.util.List;
 @RequestMapping("/valor")
 public class ValorController {
     @Autowired
-    private ValorService valorService;
+    private ValorService service;
     private List<Double> valoresGuardados;
 
     @PostMapping
-    public ResponseEntity<?> calcular(@RequestBody final Valor valorDto) {
+    public ResponseEntity<?> calcular(@RequestBody final Valor dto) {
         try {
-            valorService.calcular(valorDto.getValor());
+            service.calcular(dto.getValor());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Erro " + e.getMessage());
         }
-        return ResponseEntity.ok(valorService.calcular(valorDto.getValor()));
+        return ResponseEntity.ok(service.calcular(dto.getValor()));
     }
 }
