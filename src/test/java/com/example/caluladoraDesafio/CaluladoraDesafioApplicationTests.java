@@ -53,4 +53,10 @@ class CaluladoraDesafioApplicationTests {
 		double resultado = ValorService.desvioPadrao(valores);
 		Assertions.assertEquals(esperado, resultado, desvio);
 	}
+	@Test
+	public void testMetodoMediana(){
+		double esperado = 10.5; // Mediana dos valores
+		double resultado = ValorService.mediana(valores);
+		Assertions.assertEquals(esperado, resultado, desvio);
+	}
 }
